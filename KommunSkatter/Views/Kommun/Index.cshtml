@@ -1,13 +1,13 @@
 ﻿@model List<KommunSkatter.Models.Kommun>
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Taxes Page";
     String year = (String)@Url.ActionContext.RouteData.Values["id"];
 }
 
 <div class="text-center">
     <h1 class="display-4">KommunSkatter</h1>
 
-        <table>
+        <table class="table">
             <thead>
             <tr>
                 <th>Kommun</th>
