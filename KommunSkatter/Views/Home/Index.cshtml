@@ -1,6 +1,7 @@
 ﻿@model List<KommunSkatter.Models.Kommun>
 @{
     ViewData["Title"] = "Home Page";
+    String year = (String)@Url.ActionContext.RouteData.Values["id"];
 }
 
 <div class="text-center">
@@ -20,13 +21,16 @@
         <tbody>
         @foreach(var data in kommun.results)
         {
-                <tr>
-                    <td>@data.kommun</td>
-                    <td>@data.församling</td>
-                    <td>@data.kommunalskatt</td>
-                    <td>@data.landstingsskatt</td>
-                    <td>@data.summaexklkyrkoavgift</td>
-                </tr>
+                    @if (data.år == year)
+                    {
+                        <tr>
+                            <td>@data.kommun</td>
+                            <td>@data.församling</td>
+                            <td>@data.kommunalskatt</td>
+                            <td>@data.landstingsskatt</td>
+                            <td>@data.summaexklkyrkoavgift</td>
+                        </tr>
+                    }
         }
         </tbody>
         </table>
