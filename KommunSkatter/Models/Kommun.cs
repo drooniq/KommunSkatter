@@ -2,17 +2,17 @@
 
 namespace KommunSkatter.Models
 {
-    public class Kommun
+    public class KommunData
     {
         public string next { get; set; }
         public int resultCount { get; set; }
         public int offset { get; set; }
         public int limit { get; set; }
         public int queryTime { get; set; }
-        public Result[] results { get; set; }
+        public Kommun[] results { get; set; }
     }
 
-    public class Result
+    public class Kommun
     {
         public string kyrkoavgift { get; set; }
 
