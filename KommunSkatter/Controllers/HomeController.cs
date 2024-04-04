@@ -16,8 +16,7 @@ namespace KommunSkatter.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<Kommun> data = await SkatteAPI.GetAPIdataAsync();
-            return View(data);
+            return View();
         }
 
         public IActionResult Privacy()

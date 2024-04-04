@@ -1,38 +1,10 @@
 ﻿@model List<KommunSkatter.Models.Kommun>
 @{
     ViewData["Title"] = "Home Page";
-    String year = (String)@Url.ActionContext.RouteData.Values["id"];
 }
 
 <div class="text-center">
     <h1 class="display-4">KommunSkatter</h1>
-    @foreach(var kommun in Model)
-    {
-        <table>
-            <thead>
-            <tr>
-                <th>Kommun</th>
-                <th>Församling</th>
-                <th>Kommunalskatt</th>
-                <th>Landstingsskatt</th>
-                <th>TotalSkatt</th>
-            </tr>
-            </thead>
-        <tbody>
-        @foreach(var data in kommun.results)
-        {
-                    @if (data.år == year)
-                    {
-                        <tr>
-                            <td>@data.kommun</td>
-                            <td>@data.församling</td>
-                            <td>@data.kommunalskatt</td>
-                            <td>@data.landstingsskatt</td>
-                            <td>@data.summaexklkyrkoavgift</td>
-                        </tr>
-                    }
-        }
-        </tbody>
-        </table>
-    }
+    <p>Välkommen till Kommunala skattesatser för diverse år.</p>
+    
 </div>
