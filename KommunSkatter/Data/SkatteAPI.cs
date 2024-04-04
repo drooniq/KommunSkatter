@@ -7,9 +7,18 @@ namespace KommunSkatter.Data
 {
     public class SkatteAPI
     {
+        private static List<Kommun> _Kommuner = null;
+
         public static async Task<List<Kommun>> GetAPIdataAsync()
         {
-            List<Kommun> kommuner = new List<Kommun>();
+            if (_Kommuner == null)
+            {
+                _Kommuner = new List<Kommun>();
+            }
+            else
+            {
+                if (_Kommuner.Count == 0)
+                {
 
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://skatteverket.entryscape.net");
