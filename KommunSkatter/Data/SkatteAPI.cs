@@ -12,8 +12,8 @@ namespace KommunSkatter.Data
         {
             if (_Kommuner == null)
             {
-                 _Kommuner = new List<Kommun>();
-            } 
+                _Kommuner = new List<Kommun>();
+            }
             else
             {
                 if (_Kommuner.Count == 0)
@@ -29,19 +29,13 @@ namespace KommunSkatter.Data
                         var data = response.Content.ReadAsStringAsync().Result;
                         var json = JsonSerializer.Deserialize<Kommun>(data);
                         _Kommuner.Add(json);
-                        Console.WriteLine("Data hämtad");
                     }
                     else
                     {
                         Console.WriteLine("Error");
                     }
                 }
-                else
-                {
-                    Console.WriteLine("Data redan hämtad");
-                }
             }
-        
             return _Kommuner;
         }
     }
