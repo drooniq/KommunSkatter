@@ -14,7 +14,7 @@ namespace KommunSkatter.Data
             client.BaseAddress = new Uri("https://skatteverket.entryscape.net/");
             client.DefaultRequestHeaders.Clear();
 
-            HttpResponseMessage response = await client.GetAsync("rowstore/dataset/c67b320b-ffee-4876-b073-dd9236cd2a99");
+            HttpResponseMessage response = await client.GetAsync("rowstore/dataset/c67b320b-ffee-4876-b073-dd9236cd2a99/json?_offset=100&_limit=400");
             if (response.IsSuccessStatusCode)
             {
                 var data = response.Content.ReadAsStringAsync().Result;
